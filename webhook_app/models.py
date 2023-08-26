@@ -8,8 +8,7 @@ class Account(models.Model):
     app_secret_token = models.CharField(max_length=100, unique=True)
     website = models.URLField(blank=True)
 
-    def __str__(self):
-        return self.account_name
+
 
 
 class Destination(models.Model):
@@ -19,5 +18,4 @@ class Destination(models.Model):
     http_method = models.CharField(max_length=10)
     headers = models.JSONField()
 
-    def __str__(self):
-        return f"Destination for {self.account.account_name}"
+
