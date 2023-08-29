@@ -25,5 +25,4 @@ urlpatterns = [
     path('accounts/<int:pk>/', AccountRetrieveUpdateDeleteView.as_view(),name='account-retrieve-update-delete'),
     path('destinations/', DestinationListCreateView.as_view(),name='destination-list-create'),
     path('destinations/<int:pk>/', DestinationRetrieveUpdateDeleteView.as_view(),name='destination-retrieve-update-delete'),
-    path('destinations/account/<str:account_id>/',DestinationByAccountView.as_view(), name='destinations-by-account'),
 ]
