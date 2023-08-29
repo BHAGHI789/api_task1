@@ -28,12 +28,4 @@ class DestinationRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView)
     serializer_class = DestinationSerializer
 
 
-class DestinationByAccountView(APIView):
-    def get(self, request, account_id):
-        try:
-            account = Account.objects.get(account_id=account_id)
-            destinations = Destination.objects.filter(account=account)
-            serializer = DestinationSerializer(destinations, many=True)
-            return Response(serializer.data)
-        except Account.DoesNotExist:
-            return Response({'message': 'Account not found'}, status=status.HTTP_404_NOT_FOUND)
+
